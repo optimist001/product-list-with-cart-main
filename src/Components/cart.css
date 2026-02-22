@@ -1,0 +1,123 @@
+.cart{
+  background-color: var(--Rose-50);
+  width: 100%;
+  height: max-content;
+  padding:1.5rem;
+  border-radius: .5rem;
+}
+
+.cart-title{
+    font-size: 2rem;
+    color: var(--Red);
+    margin-bottom: 2rem;
+}
+
+.cart-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.cart-content p{
+    font-size: .75rem;
+    font-weight: 700;
+    color: var(--Rose-300);
+}
+
+.cart-item{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid var(--Rose-300);
+    margin-bottom: 1.5rem;
+}
+
+.calculation{
+    display: flex;
+    align-items: center;
+    gap: .85rem;
+    font-size: .85rem;
+    color: var(--Rose-300);
+}
+
+.calculation p:nth-child(1){
+    font-weight: 700;
+    color: var(--Red);
+}
+
+.calculation p:nth-child(2){
+    font-weight: 400;
+}
+
+.calculation p:nth-child(3){
+    font-weight: 700;
+}
+
+.remove-btn{
+    background: transparent;
+    width: 16px;
+    height: 16px;
+    color: var(--Rose-300);
+    border: 1px solid var(--Rose-300);
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 700;
+    transition: .3s ease-in-out;
+}
+
+.remove-btn:hover{
+    color: var(--Rose-900);
+    border-color: var(--Rose-900);
+}
+
+.carbon{
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: .5rem 0;
+    margin-top: 1rem;
+    background: var(--Rose-100);
+    font-size: .85rem;
+    font-weight: 700;
+    color: var(--Rose-500);
+}
+
+.carbon strong{
+    color: var(--Rose-900);
+}
+
+.total{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--Rose-300);
+    font-size: .85rem;
+}
+
+.total span{
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--Rose-900);
+}
+
+.checkout{
+    width: 100%;
+    margin-top: 2rem;
+    color: var(--Rose-50);
+    background: var(--Red);
+    border-radius: 12px;
+    padding: .75rem 0;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.checkout:hover{
+    transform: scale(1.1);
+}

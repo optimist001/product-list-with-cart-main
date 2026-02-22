@@ -1,0 +1,100 @@
+.image-wrapper{
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.image-wrapper .product{
+    height: auto;
+    border-radius: .75rem;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.image-wrapper .product:hover{
+    border: 2px solid var(--Red);
+}
+
+.image-wrapper .counter{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    inset: auto 0 -15px 0;
+    width: max-content;
+    padding: .85rem 1.15rem;
+    border-radius: 1.2rem;
+    margin-inline: auto;
+    color: var(--Rose-50);
+    background: var(--Red);
+    font-weight: 700;
+    font-size: .95rem;
+    text-transform: capitalize;
+    transition: all .3s ease;
+}
+
+.counter button{
+    width: 15px;
+    height: 15px;
+    background: transparent;
+    border-radius: 50%;
+    border: 1px solid var(--Rose-50);
+    color: var(--Rose-50);
+    cursor: pointer;
+    text-align: center;
+    transition: .3s ease-in-out;
+}
+
+.counter button:hover,
+.counter button:active,
+.counter button:focus{
+    background: var(--Rose-50);
+    color: var(--Red);
+}
+
+.image-wrapper .add-to-cart-btn{
+    color: var(--Rose-900);
+    font-weight: 700;
+    font-size: .75rem;
+    text-transform: capitalize;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    inset: auto 0 -15px 0;
+    width: max-content;
+    padding: .75rem 1rem;
+    border-radius: 1.2rem;
+    margin-inline: auto;
+    cursor: pointer;
+    color: var(--Rose-900);
+    font-weight: 700;
+    font-size: .75rem;
+    text-transform: capitalize;
+    border: 2px solid var(--Red);
+    transition: all .3s ease;
+}
+
+.image-wrapper .add-to-cart-btn:hover,
+.image-wrapper .add-to-cart-btn:active,
+.image-wrapper .add-to-cart-btn:focus{
+    /* background: var(--Red); */
+    color: var(--Red);
+}
+
+.products-card .category{
+    font-size: .85rem;
+    color: var(--Rose-400);
+}
+
+.products-card h3{
+    font-size: 1.25rem;
+    color: var(--Rose-900);
+}
+
+.products-card .price{
+    color: var(--Red);
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
