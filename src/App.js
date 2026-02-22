@@ -1,10 +1,20 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Products from "./pages/Products";
 import { Cart } from "./Components/Cart";
+import ConfirmModal from "./Components/confirmModal";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    const saved = localStorage.getItem("cart");
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
+
+  const [showModal, setShowModal] = useState(false);
 
   function handleClick(product) {
     console.log(product);
@@ -41,6 +51,15 @@ function App() {
     setCart(cart.filter((item) => item.id !== id));
   }
 
+  function openModal() {
+    setShowModal(true);
+  }
+
+  function closeModal() {
+    setShowModal(false);
+    setCart([]);
+  }
+
   return (
     <div className="app">
       <div className="grid-container">
@@ -50,7 +69,13 @@ function App() {
           increase={increase}
           decrease={decrease}
         />
-        <Cart size={cart.length} cart={cart} removeItem={removeItem} />
+        <Cart
+          size={cart.length}
+          cart={cart}
+          removeItem={removeItem}
+          openModal={openModal}
+        />
+        {showModal && <ConfirmModal cart={cart} closeModal={closeModal} />}
       </div>
     </div>
   );

@@ -6,7 +6,8 @@ export const Cart = ({
   cart,
   increase,
   decrease,
-  removeItem}) => {
+  removeItem,
+  openModal}) => {
      const total = cart.reduce(
     (sum, item) => sum + item.price * item.qty,
     0
@@ -47,7 +48,7 @@ export const Cart = ({
               <img src="/assets/images/icon-carbon-neutral.svg" alt="carbon-neutral" />
               <p>This is a<strong> Carbon-neutral </strong>Delivery</p>
             </button>
-            <button className="checkout">
+            <button className="checkout" onClick={() =>openModal()}>
                 Confirm Order
             </button>
 

@@ -112,7 +112,7 @@
     margin-top: 2rem;
     color: var(--Rose-50);
     background: var(--Red);
-    border-radius: 12px;
+    border-radius: 2rem;
     padding: .75rem 0;
     cursor: pointer;
     transition: .3s ease-in-out;
