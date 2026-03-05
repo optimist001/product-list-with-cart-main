@@ -1,7 +1,7 @@
 import React from 'react'
 import './ProductsCard.css'
 const ProductCard = ({ product, handleClick, cart, increase, decrease }) => {
-  const { name, price, image, category, id } = product;
+  const { name, price, image, category } = product;
 
   const inCart = cart.find((item) => item.id === product.id);
   return (
