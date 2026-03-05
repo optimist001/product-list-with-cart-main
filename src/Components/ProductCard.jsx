@@ -1,29 +1,30 @@
 import React from 'react'
 import './ProductsCard.css'
 const ProductCard = ({ product, handleClick, cart, increase, decrease }) => {
-  const { name, price, image, category } = product;
+  const { name, price, image, category, id } = product;
 
   const inCart = cart.find((item) => item.id === product.id);
-  console.log(inCart)
   return (
     <div className='products-card'>
       <div className='image-wrapper'>
         <img className='product' src={image.desktop} alt={image} />
 
-        {inCart ? (
-          <div className="counter">
-            <button onClick={() => decrease(product.id)}>-</button>
-            <span>{inCart.qty}</span>
-            <button onClick={() => increase(product.id)}>+</button>
-          </div>
-
-        ) : (
-            <button
+        {!inCart ? (
+          <button
             className='add-to-cart-btn' 
             onClick={() => handleClick(product)}>
               <img src="/assets/images/icon-add-to-cart.svg" alt="icon-cart" />
               Add to Cart
             </button>
+            
+          
+
+        ) : (
+            <div className="counter">
+            <button onClick={() => decrease(product.id)}>-</button>
+            <span>{inCart.qty}</span>
+            <button onClick={() => increase(product.id)}>+</button>
+          </div>
 
         )}
 

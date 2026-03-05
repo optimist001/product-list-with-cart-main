@@ -17,7 +17,6 @@ function App() {
   const [showModal, setShowModal] = useState(false);
 
   function handleClick(product) {
-    console.log(product);
     const existing = cart.find((item) => item.id === product.id);
 
     if (existing) {

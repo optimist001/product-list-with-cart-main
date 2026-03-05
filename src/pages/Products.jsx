@@ -10,17 +10,24 @@ const Products = ({cart,increase,decrease,handleClick}) => {
     useEffect(()=>{
         fetch("/data/data.json")
         .then(res => res.json())
-        .then(data => setProducts(data))
+        .then(data => {
+            const productWithId = data.map((product,index) => ({
+                ...product,
+                id: index + 1
+            }));
+            setProducts(productWithId);
+        })
         .catch(error => console.error(error));
-    }, [])
+    }, []);
     
   return (
     <div className='products-container'>
         <h1 className='title'>desserts</h1>
         <div className='products-grid'>
-            {products.map(product => (
-                <ProductCard 
-                key={product.id} 
+            {products.map((product,index) => (
+                <ProductCard
+                // id = {id} 
+                key={index} 
                 product={product} 
                 handleClick={handleClick} 
                 cart={cart}
